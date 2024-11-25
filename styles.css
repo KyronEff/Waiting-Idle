@@ -1,0 +1,152 @@
+:root {
+    --main-font: "Major Mono Display", monospace;
+}
+
+
+html {
+    background-color: rgb(25, 6, 56);
+}
+
+html,body {
+    padding: 0;
+    margin: 0;
+}
+
+body p.waitingtitle {
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    font-family: var(--main-font);
+    font-size: 50px;
+}
+
+div.header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: top;
+    height:60px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(65, 22, 134);
+
+}
+
+div.header p {
+    padding-left: 100px;
+    padding-right: 100px;
+    font-family: var(--main-font);
+    font-size: 20px;
+}
+
+div.currencydisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(65, 22, 134) 2%, rgb(40, 13, 85) 96%, rgb(62, 17, 136));
+    height: 300px;
+    font-family: var(--main-font);
+}
+
+div.currencydisplay p{
+    font-size: 2.5rem;
+}
+
+
+div.currencydisplay *{
+    padding-left: 75px;
+    padding-right: 75px;
+    text-align: center;
+}
+
+div.buttons {
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient( rgb(62, 17, 136),rgb(25, 6, 56));
+}
+
+div.buttons div.upgrades {
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    
+}
+
+div.buttons div.currency {
+    display: flex;
+    justify-content: center;
+    height: 40%;
+}
+
+div.buttons div.upgrades button {
+    width: 540px;
+    height: 225px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+    background-color: rgba(40, 49, 70, 0.15);
+    border: transparent;
+    border-radius: 10px;
+    transition: background-color ease-in-out 0.65s, color ease-in-out 0.65s;
+}
+
+div.buttons div.currency button {
+    width: 250px;
+    height: 150px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    background-color: rgba(30, 37, 53, 0.1);
+    border: transparent;
+    border-radius: 10px;
+    transition: background-color ease-in-out 0.65s, color ease-in-out 0.65s;
+}
+
+div.buttons span.buttontitle {
+    font-family: var(--main-font);
+    font-size: 2.75rem;
+}
+
+div.buttons span.buttontitlesmall {
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+}
+
+div.buttons span.description {
+    font-size: 1rem;
+}
+
+div.buttons div.currency button:hover, div.buttons div.upgrades button:hover {
+    background-color: rgb(14, 18, 26);
+    color: white;
+}
+
+div.buttons button.upbutton {
+    font-family: var(--main-font);
+}
+
+div.buttons button.conbutton {
+    font-family: var(--main-font);
+}
+
+div.buttons span.conbutton {
+    font-family: var(--main-font);
+}
+
+div.buttons span.concost {
+    font-family: var(--main-font) !important;
+}
+
+div.value h1.cursubnum {
+    font-size: 18px;
+}
+
+div.value p.cursubhead {
+    font-size: 22px;
+}
+
+div.buttons div.currency button.convertlustrum span.kalpacosttext {
+    font-family: var(--main-font);
+}
