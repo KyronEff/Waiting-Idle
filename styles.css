@@ -5,9 +5,12 @@
 
 html {
     background-color: rgb(25, 6, 56);
+    margin: 0 auto;
+    min-width: 80%
+
 }
 
-html,body {
+body {
     padding: 0;
     margin: 0;
 }
@@ -26,7 +29,6 @@ div.header {
     align-items: flex-start;
     text-align: top;
     height:10%;
-    width: 100%;
     padding: 0;
     margin: 0;
     background-color: rgb(65, 22, 134);
@@ -154,7 +156,9 @@ div.buttons div.currency button.convertlustrum span.kalpacosttext {
     font-family: var(--main-font);
 }
 
-@media (max-width: 1200px) {
-    
+@media html (max-width: 1440px) {
+    html {
+        max-width: 80%;
+    }
     
 }
