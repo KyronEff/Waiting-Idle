@@ -46,6 +46,7 @@ div.currencydisplay {
     align-items: center;
     background-image: linear-gradient(rgb(65, 22, 134) 2%, rgb(40, 13, 85) 96%, rgb(62, 17, 136));
     height: 50%;
+    width: 100%;
     padding-top: 1%;
     padding-bottom: 3%;
     font-family: var(--main-font);
@@ -153,6 +154,7 @@ div.buttons div.currency button.convertlustrum span.kalpacosttext {
     font-family: var(--main-font);
 }
 
-@media screen {
+@media (max-width: 1200px) {
+    
     
 }
