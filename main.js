@@ -119,6 +119,7 @@ let gameData = {
 function initializeValues() {
     gameData = save.gameLoad(gameData)
     updateUI()
+    console.log(gameData)
     beginAutosave()
     console.log("Game initialized")
 }
