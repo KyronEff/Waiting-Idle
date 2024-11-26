@@ -7,7 +7,7 @@ export function gameSave(data) {
     localStorage.setItem('saveData', save)
 }
 
-export function gameLoad(data) {
+export function gameLoad() {
     if (JSON.parse(localStorage.getItem('saveData')) === null) {
         return {
             instanceData: {
