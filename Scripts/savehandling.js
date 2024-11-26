@@ -8,7 +8,9 @@ export function gameSave(data) {
 }
 
 export function gameLoad() {
-    if (JSON.parse(localStorage.getItem('saveData')) === null) {
+    const save = localStorage.getItem('saveData');
+
+    if (JSON.parse(localStorage.getItem('saveData')) === null || !save) {
         return {
             instanceData: {
                 amount: 0,
@@ -54,7 +56,7 @@ export function gameLoad() {
             }
         };
     } else {
-        return JSON.parse(localStorage.getItem('saveData'))
+        return JSON.parse(save);
     }
 }
 
