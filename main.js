@@ -1,6 +1,7 @@
 /* Main JS Code */
 import * as currency from './Scripts/currency.js'
 import * as purchase from './Scripts/purchases.js'
+import * as save from './Scripts/savehandling.js'
 
 const buttons = {
     dilationButton: {
@@ -20,6 +21,12 @@ const buttons = {
     },
     kalpaButton: {
         src: document.querySelector('.convertlustrum'),
+    },
+    saveButton: {
+        src: document.querySelector('.savebutton')
+    },
+    loadButton: {
+        src: document.querySelector('.loadbutton')
     }
     
 }
@@ -63,7 +70,7 @@ let upgrades = {
 
 
 
-export let gameData = {
+let gameData = {
     instanceData: {
         amount: 0,
         gain: 0
@@ -110,9 +117,12 @@ export let gameData = {
 
 
 function initializeValues() {
+    gameData = save.gameLoad(gameData)
     updateUI()
+    beginAutosave()
     console.log("Game initialized")
 }
+
 
 
 function gametick() {
@@ -156,9 +166,18 @@ buttons.rendButton.src.addEventListener('click', () => (purchase.purchaseUpgrade
 buttons.momentButton.src.addEventListener('click', () => purchase.purchaseConvert(gameData.momentData, gameData.instanceData,upgrades.conversionUpgrades.momentconversion, updateUI));
 buttons.lustrumButton.src.addEventListener('click', () => purchase.purchaseConvert(gameData.lustrumData, gameData.momentData,upgrades.conversionUpgrades.lustrumconversion, updateUI));
 buttons.kalpaButton.src.addEventListener('click', () => purchase.purchaseConvert(gameData.kalpaData, gameData.lustrumData, upgrades.conversionUpgrades.kalpaconversion, updateUI));
+buttons.saveButton.src.addEventListener('click', () => save.gameSave(gameData));
+buttons.loadButton.src.addEventListener('click', () => gameData = save.gameLoad(gameData));
 
 // End of event listeners
 
-initializeValues()
+
+
+function beginAutosave() {
+    setInterval(() => save.gameSave(gameData), 30000)
+}
+
 
 let tick = setTimeout(gametick, gameData.tickspeedData.speed)
+
+initializeValues()

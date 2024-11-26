@@ -75,18 +75,19 @@ div.buttons div.upgrades {
     display: flex;
     justify-content: center;
     height: 60%;
-    
+    background-image: (rgb(37, 9, 82), rgb(53, 17, 110))
 }
 
 div.buttons div.currency {
     display: flex;
     justify-content: center;
     height: 40%;
+    background-color: linear-gradient(rgb(53, 17, 110),rgb(37, 9, 82) )
 }
 
 div.buttons div.upgrades button {
     width: 30%;
-    height: 200px;
+    height: 250px;
     margin-right: 2%;
     margin-left: 2%;
     margin-top: 5%;
@@ -123,7 +124,7 @@ div.buttons span.description {
     font-size: 1rem;
 }
 
-div.buttons div.currency button:hover, div.buttons div.upgrades button:hover {
+div.buttons div.currency button:hover, div.buttons div.upgrades button:hover, div.buttons div.saveload button:hover {
     background-color: rgb(14, 18, 26);
     color: white;
 }
@@ -156,9 +157,21 @@ div.buttons div.currency button.convertlustrum span.kalpacosttext {
     font-family: var(--main-font);
 }
 
-@media html (max-width: 1440px) {
-    html {
-        max-width: 80%;
-    }
-    
+div.buttons div.saveload button {
+    height: 200px;
+    width: 200px;
+    font-family: var(--main-font);
+    font-size: 30px;
+    text-align: center;
+    border: transparent;
+    background-color: rgba(30, 37, 53, 0.1);
+    border-radius: 10px;;
+    margin: 10px;
+    transition: background-color ease-in-out 0.65s, color ease-in-out 0.65s;
+}
+
+div.buttons div.saveload {
+    display: flex;
+    justify-content: flex-end;
+    background-image: linear-gradient( rgb(37, 9, 82), rgb(35, 23, 53));
 }
