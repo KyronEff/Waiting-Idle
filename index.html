@@ -8,60 +8,95 @@
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="upgradetab">
-        <p class="waitingtitle">Waiting 。。。</p>
+    <div class="upgrades-tab">
         <div class="header"> 
-            <p class="utitle">Upgrades</p>
-            <p class="ptitle">Prestige</p>
-            <p class="atitle">Automation</p>
-            <p class="ititle">Info</p>
-            <p class="stitle">Settings</p>
+            <p class="upgrades-title">Upgrades</p>
+            <p class="prestige-title">Prestige</p>
+            <p class="automation-title">Automation</p>
+            <p class="info-title">Info</p>
+            <p class="settings-title">Settings</p>
         </div>
-        <div class="currencydisplay">
-        <div class="value">
-            <p class="currencytitle">Instances</p>
-            <h1 class="instances">0</h1>
+            <div class="currencydisplay">
+                <!-- Instances section -->
+                <div class="value">
+                    <p class="currency-title">Instances</p>
+                    <h1 class="currency-value" data-type="instance-amount">0</h1>
+                </div>
+                <!-- Moments section -->
+                <div class="value">
+                    <p class="currency-title">Moments</p>
+                    <h1 class="currency-value" data-type="moment-amount">0</h1>
+                    <p class="currency-subtitle">Instance Multiplier</p>
+                    <h1 class="currency-subvalue" data-type="moment-multiplier">0</h1>           
+                </div>
+                <!-- Lustrum section -->
+                <div class="value">
+                    <p class="currency-title">Lustrum</p>
+                    <h1 class="currency-value" data-type="lustrum-amount">0</h1>
+                    <p class="currency-subtitle">Instance Exponent</p>
+                    <h1 class="currency-subvalue" data-type="lustrum-exponent">0</h1> 
+                </div>
+                <!-- Kalpa section -->
+                <div class="value">
+                    <p class="currency-title">Kalpa</p>
+                    <h1 class="currency-value" data-type="kalpa-amount">0</h1>
+                </div>
+            </div>
+            <div class="buttons">
+    <div class="upgrade-buttons">
+        <!-- Dilation button -->
+        <button class="upgrade-button" data-type="dilation-button">
+            <span class="upgrade-title">Dilate Time</span>
+            <span class="upgrade-description">Speed up time</span>
+            <span class="upgrade-cost">Cost:  <span data-type="dilation-cost">0</span></span>
+            <span class="upgrade-level">Level: <span data-type="dilation-level">0</span></span>
+            <span class="upgrade-info">Current tick: <span data-type="tickspeed">1000</span></span>
+        </button>
+        <!-- Fracture button -->
+        <button class="upgrade-button" data-type="fracture-button">
+            <span class="upgrade-title">Fracture Reality</span>
+            <span class="upgrade-description">Increase instability, each tick has a
+            <span class="fracture-chance-display" data-type="fracture-chance">1</span>
+            chance to produce double instances</span>
+            <span class="upgrade-cost">Cost: <span data-type="fracture-cost">0</span></span>
+            <span class="upgrade-level">Level: <span data-type="fracture-level"> 0</span></span>
+        </button>
+        <!-- Rend button -->
+        <button class="upgrade-button" data-type="rend-button">
+            <span class="upgrade-title">Rend</span>
+            <span class="upgrade-description">Divide your consciousness twofold, multiplying instance gain by 2x</span>
+            <span class="additional-info">(Resets Time dilation and repairs Reality)</span>           
+            <span class="upgrade-cost">Cost: Σ Instances, Moments, Lustrum and <span data-type="rend-cost"> 0</span></span>
+            <span class="upgrade-level">Level:<span data-type="rend-level"> 0</span></span>
+            <span class="upgrade-info">Multiplier:<span data-type="rend-multiplier"> 0</span></span>
+        </button>
+    </div>
+    <div class="conversion-buttons">
+        <!-- Moment conversion-->
+        <button class="conversion-button" data-type="moment-conversion">
+            <span class="conversion-title">Convert instances to moments</span>
+            <span class="conversion-cost">Cost: <span data-type="moment-cost">0</span>
+        </button>
+        <!-- Lustrum conversion-->
+        <button class="conversion-button" data-type="lustrum-conversion">
+            <span class="conversion-title">Convert moments to lustrum</span>
+            <span class="conversion-cost">Cost: <span data-type="lustrum-cost">0</span>
+        </button>
+        <!-- Kalpa conversion-->
+        <button class="conversion-button" data-type="kalpa-conversion">
+            <span class="conversion-title">Convert lustrum to kalpa</span>
+            <span class="conversion-cost">Cost: <span data-type="kalpa-cost">0</span></span>
+        </button>
+    </div>
+    <div class="save-buttons">
+        <!-- Saving-->
+        <button class="save-button" data-type="save-button" type="button">Save</button>
+        <!-- Loading -->
+        <button class="save-button" data-type="load-button" type="button">Load</button>
+    </div>
         </div>
-        <div class="value">
-            <p class="currencytitle">Moments</p>
-            <h1 class="moments">0</h1>
-            <p class="momentmultitext cursubhead">Instance Multiplier</p>
-            <h1 class="momentmulti cursubnum">0</h1>           
-        </div>
-        <div class="value">
-            <p class="currencytitle">Lustrum</p>
-            <h1 class="lustrum">0</h1>
-            <p class="instanceexptext cursubhead">Instance Exponent</p>
-            <h1 class="instanceexp cursubnum">0</h1> 
-        </div>
-        <div class="value">
-            <p class="currencytitle">Kalpa</p>
-            <h1 class="kalpa">0</h1>
-        </div>
-        </div>
-        <div class="buttons">
-    <div class="upgrades">
-        <button type="submit" class="dilation upbutton"><span class="buttontitle">Dilate Time</span><br><br><span class="description">Speed up time by 1.05x</span><br><br>Cost:<span class="dilationcostcount"> 0</span><br><br>Level:<span class="dilationlevelcount"> 0</span><br><br>Current Multiplier:<span class="multipliercount">1.00</span><br><br>Current tick: <span class="tickspeedtext">1000</span></button>
-        <button type="submit" class="fracture upbutton"><span class="buttontitle">Fracture Reality</span><br><br><span class="description">Increase instability, each tick has a <span class="doublechancetext">1</span> chance to produce double instances</span><br><br>Cost:<span class="fracturecostcount"> 0</span><br><br>Level:<span class="fracturelevelcount"> 0</span></button>
-        <button type="submit" class="rend upbutton"><span class="buttontitle">Rend</span><br><br><span class="description">Divide your consciousness twofold, multiplying instance gain by 2x<br><br>(Resets Time dilation and repairs Reality)</span><br><br>Cost: Σ Instances, Moments, Lustrum and <span class="rendcostcount">0</span><br><br>Level:<span class="rendlevelcount"> 0</span><br><br>Multiplier:<span class="rendmultipliercount"> 0</span></button>
     </div>
-    <div class="currency">
-        <button type="submit" class="convertinstance"><span class="conbutton"><span class="buttontitlesmall">Convert instances to moments</span><br><br>Cost: <span class="momentcostdisplay concost"> 0</span></span></button>
-        <button type="submit" class="convertmoment"><span class="conbutton"><span class="buttontitlesmall">Convert moments to lustrum</span><br><br>Cost: <span class="lustrumcostdisplay concost"> 0</span></span></button>
-        <button type="submit" class="convertlustrum"><span class="buttontitlesmall">Convert lustrum to kalpa</span><span class="kalpacosttext"><br><br>Cost: </span><span class="kalpacostdisplay concost"> 0</span></span></button>
-    </div>
-    <div class="saveload">
-        <button type="submit" class="savebutton">Save</button>
-        <button type="submit" class="loadbutton">Load</button>
-    </div>
-        </div>
-    </div>
-    <div class="prestigetab">
-    </div>
-    <div class="settingstab">
-    </div>
-    <div class="infotab">
-    </div>
+
 <script type="module" src="main.js"></script>    
 </body>
 </html>

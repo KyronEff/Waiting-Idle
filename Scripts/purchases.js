@@ -13,6 +13,3 @@ export function purchaseConvert(convert, currency,conversiontype, update) {
     }
     update()
 }
-
-// buttons.fractureButton.src.addEventListener('click', () => (purchase.purchaseUpgrade(gameData.fractureData, gameData.momentData, updateUI)));
-// buttons.dilationButton.src.addEventListener('click', () => (purchase.purchaseUpgrade(gameData.dilationData, gameData.instanceData, updateUI)));

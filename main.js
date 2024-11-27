@@ -5,28 +5,28 @@ import * as save from './Scripts/savehandling.js'
 
 const buttons = {
     dilationButton: {
-        src: document.querySelector('.dilation'),
+        src: document.querySelector('[data-type="dilation-button"]'),
     },
     fractureButton: {
-        src: document.querySelector('.fracture'),
+        src: document.querySelector('[data-type="fracture-button"]'),
     },
     rendButton: {
-        src: document.querySelector('.rend'),
+        src: document.querySelector('[data-type="rend-button"]'),
     },
     momentButton: {
-        src: document.querySelector('.convertinstance'),
+        src: document.querySelector('[data-type="moment-conversion"]'),
     },
     lustrumButton: {
-        src: document.querySelector('.convertmoment'),
+        src: document.querySelector('[data-type="lustrum-conversion"]'),
     },
     kalpaButton: {
-        src: document.querySelector('.convertlustrum'),
+        src: document.querySelector('[data-type="kalpa-conversion"]'),
     },
     saveButton: {
-        src: document.querySelector('.savebutton')
+        src: document.querySelector('[data-type="save-button"]')
     },
     loadButton: {
-        src: document.querySelector('.loadbutton')
+        src: document.querySelector('[data-type="load-button"]')
     }
     
 }

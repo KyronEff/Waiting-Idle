@@ -14,7 +14,10 @@ export function calculateLustrumCost(lustrum) {
 }
 
 export function calculateLustrumExponent(lustrum) {
-    return Math.max(1, Math.floor(1+(1.25-1) * (Math.log(lustrum+ 1) / Math.log(2+1)) * 100) / 100);
+    const base = 1;
+    const growthRate = 0.25;
+    let exponent = (base + growthRate * Math.log(lustrum + 1));
+    return Math.max(1, Math.floor(exponent*100) / 100);
 }
 
 export function calculateKalpaCost(kalpa) {
@@ -108,25 +111,24 @@ export function recalculateValues(instancegain, moment, momentcost, momentmultip
 
 export function updateUIFormulae(momentcost, momentmultiplier, lustrumcost, lustrumexponent, kalpacost, dilationupgradecost,
     fractureupgradecost, fracturechance, rendupgradecost, tickspeed) {
-    document.querySelector('.momentcostdisplay').textContent = momentcost + " Instances";
-    document.querySelector('.momentmulti').textContent = momentmultiplier + "x";
-    document.querySelector('.lustrumcostdisplay').textContent = lustrumcost + " Moments";
-    document.querySelector('.instanceexp').textContent = lustrumexponent + "^";
-    document.querySelector('.kalpacostdisplay').textContent = kalpacost + " Lustrum";
-    document.querySelector('.dilationcostcount').textContent = dilationupgradecost + " Instances";
-    document.querySelector('.fracturecostcount').textContent = fractureupgradecost + " Moments";
-    document.querySelector('.doublechancetext').textContent = fracturechance + "%";
-    document.querySelector('.rendcostcount').textContent = rendupgradecost + " Kalpa";
-    document.querySelector('.tickspeedtext').textContent = tickspeed + "ms";   
+    document.querySelector('[data-type="moment-cost"]').textContent = momentcost + " Instances";
+    document.querySelector('[data-type="moment-multiplier"]').textContent = momentmultiplier + "x";
+    document.querySelector('[data-type="lustrum-cost"]').textContent = lustrumcost + " Moments";
+    document.querySelector('[data-type="lustrum-exponent"]').textContent = lustrumexponent + "^";
+    document.querySelector('[data-type="kalpa-cost"]').textContent = kalpacost + " Lustrum";
+    document.querySelector('[data-type="dilation-cost"]').textContent = dilationupgradecost + " Instances";
+    document.querySelector('[data-type="fracture-cost"]').textContent = fractureupgradecost + " Moments";
+    document.querySelector('[data-type="fracture-chance"]').textContent = fracturechance + "%";
+    document.querySelector('[data-type="rend-cost"]').textContent = rendupgradecost + " Kalpa";
+    document.querySelector('[data-type="tickspeed"]').textContent = tickspeed + "ms";   
 }
-export function updateUIAmounts(instances, moments, lustrum, kalpa, dilationupgradelevel, dilationupgrademultiplier, fractureupgradelevel, rendupgradelevel, rendmultiplier) {
-    document.querySelector('.instances').textContent = instances;
-    document.querySelector('.moments').textContent = moments;
-    document.querySelector('.lustrum').textContent = lustrum;
-    document.querySelector('.kalpa').textContent = kalpa;
-    document.querySelector('.dilationlevelcount').textContent = dilationupgradelevel;
-    document.querySelector('.multipliercount').textContent = dilationupgrademultiplier + "x";
-    document.querySelector('.fracturelevelcount').textContent = fractureupgradelevel;
-    document.querySelector('.rendlevelcount').textContent = rendupgradelevel;
-    document.querySelector('.rendmultipliercount').textContent = rendmultiplier + "x";
+export function updateUIAmounts(instances, moments, lustrum, kalpa, dilationupgradelevel, fractureupgradelevel, rendupgradelevel, rendmultiplier) {
+    document.querySelector('[data-type="instance-amount"]').textContent = instances;
+    document.querySelector('[data-type="moment-amount"]').textContent = moments;
+    document.querySelector('[data-type="lustrum-amount"]').textContent = lustrum;
+    document.querySelector('[data-type="kalpa-amount"]').textContent = kalpa;
+    document.querySelector('[data-type="dilation-level"]').textContent = dilationupgradelevel;
+    document.querySelector('[data-type="fracture-level"]').textContent = fractureupgradelevel;
+    document.querySelector('[data-type="rend-level"]').textContent = rendupgradelevel;
+    document.querySelector('[data-type="rend-multiplier"]').textContent = rendmultiplier + "x";
 }

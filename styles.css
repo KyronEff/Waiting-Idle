@@ -1,177 +1,179 @@
 :root {
-    --main-font: "Major Mono Display", monospace;
+    --main-font: 'Major Mono Display', monospace;
+    --main-font-color: rgb(149, 224, 206);
+    --mainBlue: #19194d;
+    --lighterBlue: #2a2a63;
+
 }
 
+html, body {
+    margin: 0 auto;
+    padding: 0;
+}
 
 html {
-    background-color: rgb(25, 6, 56);
-    margin: 0 auto;
-    min-width: 80%
-
+    background-color: var(--mainBlue);
 }
 
-body {
-    padding: 0;
-    margin: 0;
-}
+/* Header styles */
 
-body p.waitingtitle {
-    position: absolute;
-    left: 30px;
-    bottom: 0px;
-    font-family: var(--main-font);
-    font-size: 50px;
-}
-
-div.header {
+.header {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: top;
-    height:10%;
-    padding: 0;
-    margin: 0;
-    background-color: rgb(65, 22, 134);
-
-}
-
-div.header p {
-    padding-left: 5%;
-    padding-right: 5%;
-    font-family: var(--main-font);
-    font-size: 20px;
-}
-
-div.currencydisplay {
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(rgb(65, 22, 134) 2%, rgb(40, 13, 85) 96%, rgb(62, 17, 136));
+    height: 25%;
+    background-color: #121236;
+    font-family: var(--main-font);
+    color: var(--main-font-color);
+}
+
+/* Currency display styles */
+
+.currencydisplay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 50%;
-    width: 100%;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    font-family: var(--main-font);
-}
-
-div.currencydisplay p{
-    font-size: 2.5rem;
-}
-
-
-div.currencydisplay *{
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-bottom: 10px;
     text-align: center;
-}
-
-div.buttons {
-    height: 40%;
-    width: 100%;
-    background-image: linear-gradient( rgb(62, 17, 136),rgb(25, 6, 56));
-}
-
-div.buttons div.upgrades {
-    display: flex;
-    justify-content: center;
-    height: 60%;
-    background-image: (rgb(37, 9, 82), rgb(53, 17, 110))
-}
-
-div.buttons div.currency {
-    display: flex;
-    justify-content: center;
-    height: 40%;
-    background-color: linear-gradient(rgb(53, 17, 110),rgb(37, 9, 82) )
-}
-
-div.buttons div.upgrades button {
-    width: 30%;
-    height: 250px;
-    margin-right: 2%;
-    margin-left: 2%;
-    margin-top: 5%;
-    background-color: rgba(40, 49, 70, 0.15);
-    border: transparent;
-    border-radius: 10px;
-    transition: background-color ease-in-out 0.65s, color ease-in-out 0.65s;
-}
-
-div.buttons div.currency button {
-    width: 15%;
-    height: 150px;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 80px;
-    margin-bottom: 30px;
-    background-color: rgba(30, 37, 53, 0.1);
-    border: transparent;
-    border-radius: 10px;
-    transition: background-color ease-in-out 0.65s, color ease-in-out 0.65s;
-}
-
-div.buttons span.buttontitle {
+    background-color: var(--mainBlue);
     font-family: var(--main-font);
-    font-size: 2.75rem;
+    color: var(--main-font-color)
 }
 
-div.buttons span.buttontitlesmall {
-    font-family: var(--main-font);
-    font-size: 1.5rem;
-}
-
-div.buttons span.description {
-    font-size: 1rem;
-}
-
-div.buttons div.currency button:hover, div.buttons div.upgrades button:hover, div.buttons div.saveload button:hover {
-    background-color: rgb(14, 18, 26);
-    color: white;
-}
-
-div.buttons button.upbutton {
-    font-family: var(--main-font);
-}
-
-div.buttons button.conbutton {
-    font-family: var(--main-font);
-}
-
-div.buttons span.conbutton {
-    font-family: var(--main-font);
-}
-
-div.buttons span.concost {
-    font-family: var(--main-font) !important;
-}
-
-div.value h1.cursubnum {
-    font-size: 18px;
-}
-
-div.value p.cursubhead {
+.currency-title {
     font-size: 22px;
 }
 
-div.buttons div.currency button.convertlustrum span.kalpacosttext {
-    font-family: var(--main-font);
+.currency-subtitle {
+    font-size: 16px;
 }
 
-div.buttons div.saveload button {
+.currency-subvalue {
+    font-size: 14px;
+}
+
+/* Button styles */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* Upgrade buttons */
+
+.upgrade-buttons {
+    display: flex;
+    justify-content: space-between;
+    height: 60%;
+    width: 100%;
+    background-color: #121236;
+}
+
+.upgrade-button {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    height: 300px;
+    width: 40%;
+    margin: 12px;
+    font-family: var(--main-font);
+    color: var(--main-font-color);
+    padding: 10px;
+    border: transparent;
+    border-radius: 13px;
+    background-color: #1f1f61a2;
+}
+
+.upgrade-button span {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.upgrade-button .upgrade-title {
+    font-size: 35px;
+    letter-spacing: 12px;
+}
+
+.upgrade-button .upgrade-description {
+    font-size: 18px;
+}
+
+.upgrade-button .upgrade-cost {
+    font-size: 18px;
+}
+
+.upgrade-button .upgrade-level {
+    font-size: 18px;
+}
+
+.upgrade-button .upgrade-info {
+    font-size: 16px;
+}
+
+/* Conversion Buttons */
+
+.conversion-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60%;
+    width: 100%;
+    background-color: #121236;
+}
+
+.conversion-button {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 40%;
+    margin: 12px;
+    font-family: var(--main-font);
+    background-color: #1f1f61a2;
+    color: var(--main-font-color);
+    padding: 10px;
+    border: transparent;
+    border-radius: 10px;
+}
+
+.conversion-button .conversion-title {
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.conversion-button .conversion-cost {
+    font-size: 20px;
+}
+
+/* Save button styles { Temporary until I create settings menu } */
+
+.save-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    background-color: var(--mainBlue);
+}
+
+.save-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
+    background-color: #1f1f61a2;
+    font-family: var(--main-font);
+    color: var(--main-font-color);
+    font-size: 15px;
     height: 200px;
     width: 200px;
-    font-family: var(--main-font);
-    font-size: 30px;
-    text-align: center;
-    border: transparent;
-    background-color: rgba(30, 37, 53, 0.1);
-    border-radius: 10px;;
-    margin: 10px;
-    transition: background-color ease-in-out 0.65s, color ease-in-out 0.65s;
-}
-
-div.buttons div.saveload {
-    display: flex;
-    justify-content: flex-end;
-    background-image: linear-gradient( rgb(37, 9, 82), rgb(35, 23, 53));
+    margin: 15px;
 }
